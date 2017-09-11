@@ -21,7 +21,8 @@ var (
 	I live at $HOME
 	Username: $abs
 	Password: $test
-	My greeting is: $hello`
+	My greeting is: $hello
+	`
 
 	s = `{
 		"Services": "test"
@@ -39,7 +40,7 @@ func main() {
 	os.Create(finalfile)
 
 	// Concatenate all bash vars into one file - the var file
-	concatenate.FilesToFile(varfile, 0644, "", oldfiles...)
+	concatenate.FilesToFile(varfile, 0644, "\n", oldfiles...)
 	// fmt.Println("Concatenation complete")
 	test()
 
